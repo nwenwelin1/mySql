@@ -1,0 +1,253 @@
+
+mysql> select * from Team;
++--------+-----------------+-------------+
+| teamId | name            | foundedDate |
++--------+-----------------+-------------+
+|      1 | manu            | 1999-11-27  |
+|      2 | barcelona       | 1990-06-27  |
+|      3 | chelsea         | 2000-01-03  |
+|      4 | arsenal         | 2001-01-03  |
+|      5 | crystal Palace  | 2011-04-10  |
+|      6 | myanmar         | 1998-04-04  |
+|      7 | liverpool       | 1989-01-01  |
+|      8 | manchester city | 1992-06-07  |
+|      9 | watford         | 1991-06-04  |
+|     10 | everton         | 1990-07-30  |
++--------+-----------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from Player;
++----------+------------------+---------+-----+--------+--------+--------+
+| playerId | name             | jersyno | age | salary | teamId | height |
++----------+------------------+---------+-----+--------+--------+--------+
+|        1 | Kyaw Min Oo      |       8 |  30 | 500000 |      6 |      6 |
+|        2 | Than Paing       |       6 |  32 | 500000 |      6 |      6 |
+|        3 | Aung Thu         |       2 |  31 | 510000 |      6 |      6 |
+|        4 | Myo Hlaing Win   |       5 |  28 | 510000 |      6 |      5 |
+|        5 | Kyaw Zin Htet    |       7 |  35 | 500000 |      6 |      6 |
+|        6 | Sann Sat Naing   |       9 |  35 | 400000 |      6 |      6 |
+|        7 | Thein Than Win   |       8 |  29 | 400000 |      6 |      5 |
+|        8 | Joe McQue        |       8 |  29 | 400000 |      7 |      5 |
+|        9 | John McCartney   |       5 |  29 | 400000 |      7 |      5 |
+|       10 | Jack Cox         |      11 |  35 | 800000 |      7 |      6 |
+|       11 | Virgil van Dijk  |      10 |  30 | 810000 |      7 |      6 |
+|       12 | Mohamed Salah    |       6 |  30 | 820000 |      7 |      6 |
+|       13 | Robbie Fowler    |       4 |  29 | 820000 |      7 |      5 |
+|       14 | David James      |       2 |  22 | 860000 |      7 |      5 |
+|       15 | Harry Gregg      |       1 |  28 | 880000 |      1 |      6 |
+|       16 | Johnny Giles     |       2 |  28 | 850000 |      1 |      6 |
+|       17 | Tony Dunne       |       3 |  25 | 850000 |      1 |      6 |
+|       18 | Bobby Charlton   |       4 |  24 | 810000 |      1 |      6 |
+|       19 | Freddie Goodwin  |       5 |  26 | 830000 |      1 |      6 |
+|       20 | Don Gibson       |       6 |  26 | 830000 |      1 |      6 |
+|       21 | Mark Jones       |       7 |  25 | 830000 |      1 |      7 |
+|       22 | José Bravo       |       1 |  25 | 730000 |      2 |      7 |
+|       23 | Jaume Elías      |       2 |  25 | 720000 |      2 |      6 |
+|       24 | Juan Velasco     |       3 |  28 | 780000 |      2 |      7 |
+|       25 | Enric Gensana    |       4 |  29 | 770000 |      2 |      6 |
+|       26 | Joan Segarra     |       5 |  29 | 770000 |      2 |      6 |
+|       27 | Ferran Olivella  |       6 |  29 | 770000 |      2 |      6 |
+|       28 | Joaquim Rifé     |       7 |  29 | 720000 |      2 |      7 |
+|       29 | Frank Lampard    |       1 |  29 | 720000 |      3 |      7 |
+|       30 | Peter Osgood     |       2 |  23 | 720000 |      3 |      7 |
+|       31 | George Mills     |       3 |  23 | 710000 |      3 |      6 |
+|       32 | Ron Harris       |       4 |  25 | 750000 |      3 |      7 |
+|       33 | John Terry       |       5 |  25 | 750000 |      3 |      7 |
+|       34 | Steve Clarke     |       6 |  35 | 760000 |      3 |      6 |
+|       35 | Petr Čech        |       7 |  33 | 760000 |      3 |      5 |
+|       36 | Tony Adams       |       1 |  31 | 760000 |      4 |      6 |
+|       37 | George Armstrong |       2 |  32 | 720000 |      4 |      6 |
+|       38 | Luke Ayling      |       3 |  32 | 710000 |      4 |      7 |
+|       39 | Alf Baker        |       4 |  32 | 780000 |      4 |      7 |
+|       40 | Takuma Asano     |       5 |  31 | 720000 |      4 |      7 |
+|       41 | Zak Ansah        |       6 |  30 | 790000 |      4 |      7 |
+|       42 | Jimmy Ashcroft   |       7 |  30 | 790000 |      4 |      7 |
+|       43 | Kemy Agustien    |       8 |  29 | 900000 |      5 |      7 |
+|       44 | John Alderson    |       9 |  24 | 910000 |      5 |      6 |
+|       45 | Jimmy Allen      |      10 |  24 | 910000 |      5 |      6 |
+|       46 | Will Antwi       |      11 |  27 | 910000 |      5 |      6 |
+|       47 | Paul Barron      |      12 |  25 | 930000 |      5 |      6 |
+|       48 | Billy Birch      |       1 |  28 | 890000 |      5 |      6 |
+|       49 | Lee Bradbury     |       2 |  21 | 820000 |      5 |      7 |
+|       50 | Joe Cassidy      |       2 |  29 | 620000 |      8 |      7 |
+|       51 | Dick Smith       |       3 |  23 | 640000 |      8 |      7 |
+|       52 | William Bryant   |       4 |  28 | 620000 |      8 |      6 |
+|       53 | Jack Wilson      |       5 |  30 | 650000 |      8 |      6 |
+|       54 | Tom Manley       |       6 |  31 | 620000 |      8 |      6 |
+|       55 | Billy McGlen     |       7 |  38 | 700000 |      8 |      7 |
+|       56 | Ray Wood         |       8 |  34 | 770000 |      8 |      7 |
+|       57 | Malcolm Allen    |       4 |  34 | 780000 |      9 |      7 |
+|       58 | Charlie Aston    |       5 |  35 | 750000 |      9 |      7 |
+|       59 | Arthur Betts     |       6 |  34 | 760000 |      9 |      6 |
+|       60 | Dennis Bond      |       7 |  31 | 740000 |      9 |      6 |
+|       61 | Roy Brown        |       8 |  33 | 730000 |      9 |      7 |
+|       62 | Horace Cumner    |       9 |  22 | 720000 |      9 |      7 |
+|       63 | Keith Eddy       |      10 |  28 | 750000 |      9 |      7 |
+|       64 | Colin Foster     |       6 |  37 | 910000 |     10 |      7 |
+|       65 | George Fleming   |       6 |  37 | 910000 |     10 |      7 |
+|       66 | Bob Kelso        |       7 |  33 | 780000 |     10 |      6 |
+|       67 | Nick Ross        |       8 |  31 | 770000 |     10 |      6 |
+|       68 | Alex Latta       |       9 |  30 | 780000 |     10 |      6 |
+|       69 | Dickie Boyle     |      10 |  26 | 740000 |     10 |      6 |
+|       70 | Willie Muir      |      11 |  26 | 700000 |     10 |      7 |
++----------+------------------+---------+-----+--------+--------+--------+
+70 rows in set (0.00 sec)
+
+mysql> select * from Player where teamId=2;
++----------+-----------------+---------+-----+--------+--------+--------+
+| playerId | name            | jersyno | age | salary | teamId | height |
++----------+-----------------+---------+-----+--------+--------+--------+
+|       22 | José Bravo      |       1 |  25 | 730000 |      2 |      7 |
+|       23 | Jaume Elías     |       2 |  25 | 720000 |      2 |      6 |
+|       24 | Juan Velasco    |       3 |  28 | 780000 |      2 |      7 |
+|       25 | Enric Gensana   |       4 |  29 | 770000 |      2 |      6 |
+|       26 | Joan Segarra    |       5 |  29 | 770000 |      2 |      6 |
+|       27 | Ferran Olivella |       6 |  29 | 770000 |      2 |      6 |
+|       28 | Joaquim Rifé    |       7 |  29 | 720000 |      2 |      7 |
++----------+-----------------+---------+-----+--------+--------+--------+
+7 rows in set (0.11 sec)
+
+mysql> select * from Player where salary>500000;
++----------+------------------+---------+-----+--------+--------+--------+
+| playerId | name             | jersyno | age | salary | teamId | height |
++----------+------------------+---------+-----+--------+--------+--------+
+|        3 | Aung Thu         |       2 |  31 | 510000 |      6 |      6 |
+|        4 | Myo Hlaing Win   |       5 |  28 | 510000 |      6 |      5 |
+|       10 | Jack Cox         |      11 |  35 | 800000 |      7 |      6 |
+|       11 | Virgil van Dijk  |      10 |  30 | 810000 |      7 |      6 |
+|       12 | Mohamed Salah    |       6 |  30 | 820000 |      7 |      6 |
+|       13 | Robbie Fowler    |       4 |  29 | 820000 |      7 |      5 |
+|       14 | David James      |       2 |  22 | 860000 |      7 |      5 |
+|       15 | Harry Gregg      |       1 |  28 | 880000 |      1 |      6 |
+|       16 | Johnny Giles     |       2 |  28 | 850000 |      1 |      6 |
+|       17 | Tony Dunne       |       3 |  25 | 850000 |      1 |      6 |
+|       18 | Bobby Charlton   |       4 |  24 | 810000 |      1 |      6 |
+|       19 | Freddie Goodwin  |       5 |  26 | 830000 |      1 |      6 |
+|       20 | Don Gibson       |       6 |  26 | 830000 |      1 |      6 |
+|       21 | Mark Jones       |       7 |  25 | 830000 |      1 |      7 |
+|       22 | José Bravo       |       1 |  25 | 730000 |      2 |      7 |
+|       23 | Jaume Elías      |       2 |  25 | 720000 |      2 |      6 |
+|       24 | Juan Velasco     |       3 |  28 | 780000 |      2 |      7 |
+|       25 | Enric Gensana    |       4 |  29 | 770000 |      2 |      6 |
+|       26 | Joan Segarra     |       5 |  29 | 770000 |      2 |      6 |
+|       27 | Ferran Olivella  |       6 |  29 | 770000 |      2 |      6 |
+|       28 | Joaquim Rifé     |       7 |  29 | 720000 |      2 |      7 |
+|       29 | Frank Lampard    |       1 |  29 | 720000 |      3 |      7 |
+|       30 | Peter Osgood     |       2 |  23 | 720000 |      3 |      7 |
+|       31 | George Mills     |       3 |  23 | 710000 |      3 |      6 |
+|       32 | Ron Harris       |       4 |  25 | 750000 |      3 |      7 |
+|       33 | John Terry       |       5 |  25 | 750000 |      3 |      7 |
+|       34 | Steve Clarke     |       6 |  35 | 760000 |      3 |      6 |
+|       35 | Petr Čech        |       7 |  33 | 760000 |      3 |      5 |
+|       36 | Tony Adams       |       1 |  31 | 760000 |      4 |      6 |
+|       37 | George Armstrong |       2 |  32 | 720000 |      4 |      6 |
+|       38 | Luke Ayling      |       3 |  32 | 710000 |      4 |      7 |
+|       39 | Alf Baker        |       4 |  32 | 780000 |      4 |      7 |
+|       40 | Takuma Asano     |       5 |  31 | 720000 |      4 |      7 |
+|       41 | Zak Ansah        |       6 |  30 | 790000 |      4 |      7 |
+|       42 | Jimmy Ashcroft   |       7 |  30 | 790000 |      4 |      7 |
+|       43 | Kemy Agustien    |       8 |  29 | 900000 |      5 |      7 |
+|       44 | John Alderson    |       9 |  24 | 910000 |      5 |      6 |
+|       45 | Jimmy Allen      |      10 |  24 | 910000 |      5 |      6 |
+|       46 | Will Antwi       |      11 |  27 | 910000 |      5 |      6 |
+|       47 | Paul Barron      |      12 |  25 | 930000 |      5 |      6 |
+|       48 | Billy Birch      |       1 |  28 | 890000 |      5 |      6 |
+|       49 | Lee Bradbury     |       2 |  21 | 820000 |      5 |      7 |
+|       50 | Joe Cassidy      |       2 |  29 | 620000 |      8 |      7 |
+|       51 | Dick Smith       |       3 |  23 | 640000 |      8 |      7 |
+|       52 | William Bryant   |       4 |  28 | 620000 |      8 |      6 |
+|       53 | Jack Wilson      |       5 |  30 | 650000 |      8 |      6 |
+|       54 | Tom Manley       |       6 |  31 | 620000 |      8 |      6 |
+|       55 | Billy McGlen     |       7 |  38 | 700000 |      8 |      7 |
+|       56 | Ray Wood         |       8 |  34 | 770000 |      8 |      7 |
+|       57 | Malcolm Allen    |       4 |  34 | 780000 |      9 |      7 |
+|       58 | Charlie Aston    |       5 |  35 | 750000 |      9 |      7 |
+|       59 | Arthur Betts     |       6 |  34 | 760000 |      9 |      6 |
+|       60 | Dennis Bond      |       7 |  31 | 740000 |      9 |      6 |
+|       61 | Roy Brown        |       8 |  33 | 730000 |      9 |      7 |
+|       62 | Horace Cumner    |       9 |  22 | 720000 |      9 |      7 |
+|       63 | Keith Eddy       |      10 |  28 | 750000 |      9 |      7 |
+|       64 | Colin Foster     |       6 |  37 | 910000 |     10 |      7 |
+|       65 | George Fleming   |       6 |  37 | 910000 |     10 |      7 |
+|       66 | Bob Kelso        |       7 |  33 | 780000 |     10 |      6 |
+|       67 | Nick Ross        |       8 |  31 | 770000 |     10 |      6 |
+|       68 | Alex Latta       |       9 |  30 | 780000 |     10 |      6 |
+|       69 | Dickie Boyle     |      10 |  26 | 740000 |     10 |      6 |
+|       70 | Willie Muir      |      11 |  26 | 700000 |     10 |      7 |
++----------+------------------+---------+-----+--------+--------+--------+
+63 rows in set (0.00 sec)
+
+mysql> select name,Salary from Player where salary in (select max(salary) from Player);
++-------------+--------+
+| name        | Salary |
++-------------+--------+
+| Paul Barron | 930000 |
++-------------+--------+
+1 row in set (0.11 sec)
+
+mysql> select name,Salary from Player where salary in (select min(salary) from Player);
++----------------+--------+
+| name           | Salary |
++----------------+--------+
+| Sann Sat Naing | 400000 |
+| Thein Than Win | 400000 |
+| Joe McQue      | 400000 |
+| John McCartney | 400000 |
++----------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select name, (select sum(salary) from Player where Team.teamId=Player.teamId) as totalSalary from Team;
++-----------------+-------------+
+| name            | totalSalary |
++-----------------+-------------+
+| arsenal         |     5270000 |
+| barcelona       |     5260000 |
+| chelsea         |     5170000 |
+| crystal Palace  |     6270000 |
+| everton         |     5590000 |
+| liverpool       |     4910000 |
+| manchester city |     4620000 |
+| manu            |     5880000 |
+| myanmar         |     3320000 |
+| watford         |     5230000 |
++-----------------+-------------+
+10 rows in set (0.01 sec)
+
+mysql> select name ,(select avg(salary) from Player where Team.teamId= Player.teamId) as AverageSalary from Team;
++-----------------+---------------+
+| name            | AverageSalary |
++-----------------+---------------+
+| arsenal         |   752857.1429 |
+| barcelona       |   751428.5714 |
+| chelsea         |   738571.4286 |
+| crystal Palace  |   895714.2857 |
+| everton         |   798571.4286 |
+| liverpool       |   701428.5714 |
+| manchester city |   660000.0000 |
+| manu            |   840000.0000 |
+| myanmar         |   474285.7143 |
+| watford         |   747142.8571 |
++-----------------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from Player where height<5;
+Empty set (0.00 sec)
+
+mysql> select name from Player where name like 'a%';
++--------------+
+| name         |
++--------------+
+| Alex Latta   |
+| Alf Baker    |
+| Arthur Betts |
+| Aung Thu     |
++--------------+
+4 rows in set (0.00 sec)
+
+mysql> select name from Team where foundedDate='2000-01-03';
++---------+
+| name    |
++---------+
+| chelsea |
++---------+
+1 row in set (0.00 sec)
