@@ -1,0 +1,91 @@
+
+mysql> select * from Menu;
++--------+-----------+-------------+
+| menuid | name      | description |
++--------+-----------+-------------+
+|      1 | pizza     | good        |
+|      2 | juice     | good        |
+|      3 | ice cream | very good   |
+|      4 | burger    | delicious   |
+|      5 | sea food  | delicious   |
++--------+-----------+-------------+
+5 rows in set (0.02 sec)
+
+mysql> select * from Food;
++--------+----------------------+-------+--------+
+| foodid | name                 | price | menuid |
++--------+----------------------+-------+--------+
+|      1 | orange               |  1200 |      2 |
+|      2 | apple                |  1300 |      2 |
+|      3 | pineapple            |  1500 |      2 |
+|      4 | watermelon           |  1500 |      2 |
+|      5 | strawberry           |  2000 |      2 |
+|      6 | Traditional          |  5000 |      1 |
+|      7 | NewYorkStyle         |  6000 |      1 |
+|      8 | sea food             | 10000 |      1 |
+|      9 | chicago              | 15000 |      1 |
+|     10 | stuffed              | 15000 |      1 |
+|     11 | orange ice_cream     |   500 |      3 |
+|     12 | pineapple ice_cream  |   700 |      3 |
+|     13 | strawberry ice_cream |   700 |      3 |
+|     14 | milk ice_cream       |  1000 |      3 |
+|     15 | coffee ice_cream     |  1200 |      3 |
+|     16 | sea food burger      |  5000 |      4 |
+|     17 | meal burger          |  5000 |      4 |
+|     18 | fish                 |  5000 |      5 |
+|     19 | mango                |  5000 |      2 |
++--------+----------------------+-------+--------+
+19 rows in set (0.03 sec)
+
+
+mysql> select * from orderTable;
++---------+------------+-----+-------+------------+--------+
+| orderId | sale_date  | qty | price | totalPrice | foodId |
++---------+------------+-----+-------+------------+--------+
+|       1 | 2020-06-12 |   2 |  1200 |       2400 |      1 |
+|       2 | 2020-06-12 |   3 |  1300 |       3900 |      2 |
+|       3 | 2020-07-12 |   1 |  1500 |       1500 |      2 |
+|       4 | 2020-05-12 |   2 |   700 |       1400 |      3 |
+|       5 | 2020-05-16 |   3 |  5000 |      15000 |      4 |
+|       6 | 2020-07-16 |   2 |  5000 |      10000 |      5 |
++---------+------------+-----+-------+------------+--------+
+6 rows in set (0.00 sec)
+
+mysql> select name from Food,orderTable where totalPrice in (select max(totalPrice) from orderTable) and Food.foodId=orderTable.foodId;
++------------+
+| name       |
++------------+
+| watermelon |
++------------+
+1 row in set (0.04 sec)
+
+
+mysql> select name from Food,orderTable where totalPrice in (select min(totalPrice) from orderTable) and Food.foodId=orderTable.foodId;
++-----------+
+| name      |
++-----------+
+| pineapple |
++-----------+
+1 row in set (0.00 sec)
+
+
+mysql> select sale_date,sum(totalPrice) from orderTable group by sale_date;
++------------+-----------------+
+| sale_date  | sum(totalPrice) |
++------------+-----------------+
+| 2020-06-12 |            6300 |
+| 2020-07-12 |            1500 |
+| 2020-05-12 |            1400 |
+| 2020-05-16 |           15000 |
+| 2020-07-16 |           10000 |
++------------+-----------------+
+5 rows in set (0.00 sec)
+
+
+mysql> select name,sum(totalPrice) from Food,orderTable where Food.foodId=orderTable.foodId and sale_date between '2020-05-16' and '2020-06-12';
++--------+-----------------+
+| name   | sum(totalPrice) |
++--------+-----------------+
+| orange |           21300 |
++--------+-----------------+
+1 row in set (0.09 sec)
